@@ -1,6 +1,3 @@
-// build.gradle for BuildShip javafx_template
-// https://github.com/sosuisen/javafx-gradle-templates
-
 plugins {
     id 'application'
     id 'eclipse'
@@ -9,9 +6,9 @@ plugins {
 }
 
 ext {
-    moduleName = 'myapp'
+    moduleName = 'MyAppModule' // モジュール名を変更
     packageName = 'com.example'
-    entryPoint = "${packageName}.MyApp"
+    entryPoint = "${packageName}.MyApp" // エントリーポイントを MyApp に変更
     executableName = 'MyApp'
 }
 
@@ -29,11 +26,7 @@ javafx {
 }
 
 application {
-    mainModule = moduleName
-    mainClass = entryPoint
-    if (System.getProperty('DEBUG', 'false') == 'true') {
-        applicationDefaultJvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"]
-    }
+    mainClass = 'com.example.MyApp'
 }
 
 jlink {

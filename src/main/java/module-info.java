@@ -4,7 +4,7 @@
 // 'myapp': Your module name
 // 'com.example': Your package name
 
-module myapp {
+module MyAppModule {
     requires javafx.controls;
     opens com.example to javafx.graphics;
 }
