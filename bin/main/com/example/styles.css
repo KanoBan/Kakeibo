@@ -1,0 +1,52 @@
+@charset "UTF-8"
+/* メイン背景色とフォント */
+;root {
+    -fx-background-color: #f0f8ff;
+    -fx-font-family: "Comic Sans MS", sans-serif;
+}
+
+/* ポップな色合いのラベル */
+.label {
+    -fx-text-fill: #4b0082;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ボタンのスタイリング */
+.button {
+    -fx-background-color: #ff69b4;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 2, 2);
+}
+
+.button:hover {
+    -fx-background-color: #ff1493;
+}
+
+/* メニューやメニューバーの背景とテキスト色 */
+.menu-bar {
+    -fx-background-color: #ffb6c1;
+}
+
+.menu {
+    -fx-text-fill: #4b0082;
+}
+
+/* カレンダー日付表示用ラベル */
+#dateLabel {
+    -fx-text-fill: #ff6347;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* テキストフィールドのスタイリング */
+.text-field {
+    -fx-background-color: #fffaf0;
+    -fx-border-color: #ffb6c1;
+    -fx-border-radius: 10;
+    -fx-padding: 5 10;
+}
