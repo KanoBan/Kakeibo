@@ -1,0 +1,23 @@
+
+/* Background and text colors */
+.root {
+    -fx-background-color: #f5f5f5; /* Light Gray */
+    -fx-text-fill: #212121; /* Dark Gray */
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #212121;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #757575; /* Medium Gray */
+    -fx-text-fill: #ffffff; /* White */
+}
+
+.menu-bar {
+    -fx-background-color: #424242; /* Deep Gray */
+    -fx-text-fill: #ffffff;
+}
