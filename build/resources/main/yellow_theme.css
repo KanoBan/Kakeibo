@@ -1,0 +1,23 @@
+
+/* Background and text colors */
+.root {
+    -fx-background-color: #fffde7; /* Pale Yellow */
+    -fx-text-fill: #f57f17; /* Golden Yellow */
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #f57f17;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffeb3b; /* Bright Yellow */
+    -fx-text-fill: #000000; /* Black */
+}
+
+.menu-bar {
+    -fx-background-color: #fbc02d; /* Deep Yellow */
+    -fx-text-fill: #ffffff;
+}

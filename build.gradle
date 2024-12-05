@@ -35,3 +35,14 @@ jlink {
         name = executableName
     }
 }
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+

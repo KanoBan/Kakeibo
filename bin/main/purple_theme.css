@@ -1,0 +1,23 @@
+
+/* Background and text colors */
+.root {
+    -fx-background-color: #f3e5f5; /* Lavender */
+    -fx-text-fill: #4a148c; /* Deep Purple */
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #4a148c;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #ba68c8; /* Orchid Purple */
+    -fx-text-fill: #ffffff;
+}
+
+.menu-bar {
+    -fx-background-color: #7b1fa2; /* Royal Purple */
+    -fx-text-fill: #ffffff;
+}

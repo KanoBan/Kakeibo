@@ -1,0 +1,23 @@
+
+/* Background and text colors */
+.root {
+    -fx-background-color: #ffebee; /* Light Pink */
+    -fx-text-fill: #b71c1c; /* Dark Red */
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #b71c1c;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #ef5350; /* Coral Red */
+    -fx-text-fill: #ffffff;
+}
+
+.menu-bar {
+    -fx-background-color: #c62828; /* Deep Red */
+    -fx-text-fill: #ffffff;
+}
