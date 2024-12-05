@@ -12,7 +12,14 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21/"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21/">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-annotations-2.18.2.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-core-2.18.2.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-databind-2.18.2.jar"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
