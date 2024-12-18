@@ -7,7 +7,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 
 public class ChartController {
-
+ 
     public PieChart createCategoryPieChart(ExpenseManager manager) {
         PieChart pieChart = new PieChart();
         manager.getExpenses().stream()

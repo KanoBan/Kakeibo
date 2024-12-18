@@ -10,7 +10,7 @@ public class IncomeManager {
     public IncomeManager() {
         this.incomes = new ArrayList<>();
     }
-
+ 
     public void addIncome(Income income) {
         incomes.add(income);
     }

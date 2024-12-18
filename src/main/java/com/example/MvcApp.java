@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class MvcApp extends Application {
 
-    @Override
+    @Override 
     public void start(Stage stage) {
 		try {
 			// Create Loader for .fxml

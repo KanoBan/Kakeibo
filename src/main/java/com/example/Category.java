@@ -8,7 +8,7 @@ public class Category {
         this.name = name;
         this.totalAmount = 0;
     }
-
+ 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 

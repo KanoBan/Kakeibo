@@ -10,7 +10,7 @@ public class MyApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         mainAppInstance = new Main();
-
+ 
         // Mainクラスの機能を直接利用する
         mainAppInstance.start(primaryStage);
     }

@@ -14,7 +14,7 @@ public class Income {
         this.amount = amount;
         this.note = note;
     }
-
+ 
     // Getters and Setters
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }

@@ -12,7 +12,7 @@ public class MainController {
     private TextArea textArea;
 
     private Model model;
-    
+     
     public void initModel(Model model) {
 		if (this.model != null)
 			throw new IllegalStateException("Model can only be initialized once");

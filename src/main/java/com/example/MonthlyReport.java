@@ -11,7 +11,7 @@ public class MonthlyReport {
         this.year = year;
         this.month = month;
     }
-
+ 
     public void generateReport() {
         double totalIncome = incomeManager.getIncomesByMonth(year, month).stream()
                                           .mapToDouble(Income::getAmount)

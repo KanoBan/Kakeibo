@@ -10,7 +10,7 @@ import javafx.beans.property.StringProperty;
 
 public class Model {
 	public StringProperty text = new SimpleStringProperty();
-	
+	 
 	private String filePath = "memo.txt";
 	
 	private void load() {

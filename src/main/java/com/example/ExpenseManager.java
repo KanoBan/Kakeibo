@@ -37,7 +37,7 @@ public class ExpenseManager {
                                           expense.getDate().getMonthValue() == month)
                        .collect(Collectors.toList());
     }
-
+ 
     // カテゴリごとの合計を計算
     public double getTotalAmountByCategory(String category) {
         return expenses.stream()
