@@ -20,7 +20,7 @@ public class MonthlyReport {
                                              .mapToDouble(Expense::getAmount)
                                              .sum();
         double balance = totalIncome - totalExpenses;
-
+            
         System.out.println("===== " + month + "月の月次レポート =====");
         System.out.println("総収入: " + totalIncome + "円");
         System.out.println("総支出: " + totalExpenses + "円");
