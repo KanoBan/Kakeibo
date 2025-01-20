@@ -1,83 +1,27 @@
-:root {
-<<<<<<< HEAD
-    --background-color: #ffffff; /* 背景色 (白) */
-    --text-color: #000000;       /* テキスト色 (黒) */
-}
-
-[data-theme="dark"] {
-    --background-color: #1e1e1e; /* 背景色 (濃い灰色) */
-    --text-color: #f0f0f0;       /* テキスト色 (明るい灰色) */
-}
-
-[data-theme="high-contrast"] {
-    --background-color: #000000; /* 背景色 (黒) */
-    --text-color: #ffff00;       /* テキスト色 (黄色) */
-=======
-    --background-color: #ffffff;
-    --text-color: #000000;
-}
-
-[data-theme="dark"] {
-    --background-color: #1e1e1e;
-    --text-color: #f0f0f0;
-}
-
-[data-theme="high-contrast"] {
-    --background-color: #000000;
-    --text-color: #ffff00;
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
-}
-
 .root {
-    -fx-background-color: var(--background-color);
-    -fx-text-fill: var(--text-color);
-<<<<<<< HEAD
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #000000;
-=======
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
+    -fx-background-color: #ffffff; /* 白背景 */
+    -fx-text-fill: #000000;        /* 黒文字 */
 }
 
 .button {
-    -fx-text-fill: var(--text-color);
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-
-    /* 互換性のための固定値 */
+    -fx-text-fill: #ffffff; /* 白文字 */
     -fx-font-family: Arial;
-    -fx-font-weight: normal;
-
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-font-weight: bold;
+    -fx-background-color: #1e90ff; /* 青背景 */
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #61a2b1;
+    -fx-background-color: #ffcc00; /* 黄色背景 */
 }
 
 .button:pressed {
-<<<<<<< HEAD
-    -fx-background-color: #2A5058;
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #2A5058;
+    -fx-background-color: #32cd32; /* 黄緑背景 */
 }
 
 .text-area {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: var(--text-color);
-    -fx-border-color: var(--background-color);
+    -fx-background-color: #ffffff; /* 白背景 */
+    -fx-text-fill: #000000;        /* 黒文字 */
+    -fx-border-color: #1e90ff;    /* 青色枠 */
     -fx-border-width: 2px;
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #ffffff;
-    -fx-border-color: #000000;
-=======
-    -fx-background-color: #61a2b1;
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
 }
