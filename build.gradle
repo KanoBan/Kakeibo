@@ -22,12 +22,17 @@ tasks.withType(JavaCompile) {
 
 javafx {
     version = "21"
+<<<<<<< HEAD
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ] // javafx.graphics を追加
+=======
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+>>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
 }
 
 application {
     mainClass = 'com.example.MvcApp' // エントリーポイントクラス
 }
+
 
 jlink {
     options = ['--strip-debug', '--no-header-files', '--no-man-pages']
@@ -55,6 +60,10 @@ dependencies {
 tasks.withType(JavaExec) {
     jvmArgs += [
         '--module-path', 'C:/pleiades/javafx-sdk-23.0.1/lib',
+<<<<<<< HEAD
         '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics' // javafx.graphics を追加
+=======
+        '--add-modules', 'javafx.controls,javafx.fxml'
+>>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
     ]
 }

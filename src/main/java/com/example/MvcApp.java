@@ -29,11 +29,17 @@ public class MvcApp extends Application {
 
 			// Build scene and stage to show View on the screen
 			var scene = new Scene(root);
+<<<<<<< HEAD
 			scene.getStylesheets().add(getClass().getResource("/com/example/styles.css").toExternalForm());
 			stage.setTitle("家計簿アプリ");
 			stage.setScene(scene);
 			stage.show();
 
+=======
+			stage.setTitle("Memo");
+			stage.setScene(scene);
+			stage.show();
+>>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

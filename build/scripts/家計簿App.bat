@@ -72,7 +72,11 @@ set CLASSPATH=%APP_HOME%\lib\家計簿App.jar;%APP_HOME%\lib\javafx-fxml-21-win.
 
 
 @rem Execute 家計簿App
+<<<<<<< HEAD
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %APP_OPTS%  -classpath "%CLASSPATH%" com.example.MvcApp %*
+=======
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %APP_OPTS%  -classpath "%CLASSPATH%" com.example.MyApp %*
+>>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
 
 :end
 @rem End local scope for the variables with windows NT shell
