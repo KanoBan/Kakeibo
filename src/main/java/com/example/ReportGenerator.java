@@ -1,22 +1,24 @@
 package com.example;
 
-public class ReportGenerator {
+import java.util.List;
 
-    public void generate(User user) {
-        System.out.println("\n-- 月次レポート --");
-        System.out.println("ユーザー名: " + user.getName());
-        System.out.println("月収: " + user.getMonthlyIncome() + "円");
-        System.out.println("給料日: " + user.getPayday() + "日");
-        System.out.println("貯金額: " + user.getSavings() + "円");
-        
-        System.out.println("\n-- 支出の詳細 --");
+public class ReportGenerator {
+    public String generateMonthlyReport(List<Expense> expenses, String month) {
+        StringBuilder report = new StringBuilder();
         double totalExpenses = 0;
-        for (Expense expense : user.getExpenses()) {
-            System.out.println(expense.getCategory() + ": " + expense.getDescription() + " (" + expense.getAmount() + "円)");
-            totalExpenses += expense.getAmount();
+
+        report.append("Monthly Report for ").append(month).append(":\n");
+        report.append("------------------------------------\n");
+
+        for (Expense expense : expenses) {
+            if (expense.getDate().startsWith(month)) {
+                report.append(expense.toString()).append("\n");
+                totalExpenses += expense.getAmount();
+            }
         }
-        
-        System.out.println("\n総支出額: " + totalExpenses + "円");
-        System.out.println("差額: " + (user.getMonthlyIncome() - totalExpenses) + "円");
+
+        report.append("------------------------------------\n");
+        report.append("Total Expenses: $").append(String.format("%.2f", totalExpenses)).append("\n");
+        return report.toString();
     }
 }
