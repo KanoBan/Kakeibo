@@ -6,9 +6,9 @@ plugins {
 }
 
 ext {
-    moduleName = 'MyAppModule' // モジュール名を変更
+    moduleName = 'mvcapp' // module-info.java のモジュール名と一致
     packageName = 'com.example'
-    entryPoint = "${packageName}.MyApp" // エントリーポイントを MyApp に変更
+    entryPoint = "${packageName}.MvcApp" // エントリーポイントの完全修飾クラス名
     executableName = 'MyApp'
 }
 
@@ -22,12 +22,13 @@ tasks.withType(JavaCompile) {
 
 javafx {
     version = "21"
-    modules = [ 'javafx.controls' ]
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 application {
-    mainClass = 'com.example.MyApp'
+    mainClass = 'com.example.MvcApp' // エントリーポイントクラス
 }
+
 
 jlink {
     options = ['--strip-debug', '--no-header-files', '--no-man-pages']
@@ -42,4 +43,19 @@ sourceSets {
             srcDirs = ['src/main/resources']
         }
     }
+}
+
+dependencies {
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
+}
+
+tasks.withType(JavaExec) {
+    jvmArgs += [
+        '--module-path', 'C:/pleiades/javafx-sdk-23.0.1/lib',
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
 }

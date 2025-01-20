@@ -1,10 +1,8 @@
-// Most minimal module-info.java file for JavaFX
-// If you use FXML, you need more complex settings.
-
-// 'myapp': Your module name
-// 'com.example': Your package name
-
-module MyAppModule {
+module mvcapp {
     requires javafx.controls;
-    opens com.example to javafx.graphics;
+    requires javafx.fxml;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.databind;
+
+    opens com.example to javafx.fxml, com.fasterxml.jackson.databind;
 }

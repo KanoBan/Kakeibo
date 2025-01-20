@@ -18,8 +18,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-annotations-2.18.2.jar"/>
-	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-core-2.18.2.jar"/>
-	<classpathentry kind="lib" path="C:/pleiades/2024-03/workspace/家計簿App/lib/jackson-databind-2.18.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFXLibrary">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
