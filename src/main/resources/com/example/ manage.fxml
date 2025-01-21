@@ -8,9 +8,7 @@
         <Label fx:id="balanceLabel" layoutX="20.0" layoutY="20.0" text="残高: ¥0" />
         <TextField fx:id="amountField" layoutX="20.0" layoutY="60.0" prefWidth="200.0" promptText="金額を入力してください" />
         <ComboBox fx:id="categoryComboBox" layoutX="240.0" layoutY="60.0" prefWidth="200.0" promptText="カテゴリーを選択してください" />
-        <Button fx:id="addButton" layoutX="460.0" layoutY="60.0" mnemonicParsing="false" text="追加" />
-        <TextField fx:id="incomeField" layoutX="20.0" layoutY="100.0" prefWidth="200.0" promptText="収入額を入力" />
-        <Button fx:id="incomeButton" layoutX="240.0" layoutY="100.0" mnemonicParsing="false" text="臨時収入を追加" />
-        <Button fx:id="backButton" layoutX="20.0" layoutY="150.0" text="メイン画面に戻る" />
+        <Button fx:id="addButton" layoutX="460.0" layoutY="60.0" text="追加" />
+        <Button fx:id="backButton" layoutX="20.0" layoutY="100.0" text="戻る" />
     </children>
 </AnchorPane>

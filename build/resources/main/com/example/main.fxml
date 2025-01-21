@@ -4,14 +4,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController" prefWidth="600" prefHeight="400">
     <children>
         <!-- ナビゲーションボタン -->
-        <HBox layoutX="20.0" layoutY="20.0" spacing="10">
+        <HBox layoutX="50.0" layoutY="150.0" spacing="20">
             <children>
                 <Button fx:id="manageButton" text="収支管理" />
                 <Button fx:id="viewDataButton" text="データ確認" />
                 <Button fx:id="viewGraphButton" text="グラフ表示" />
+                <Button fx:id="categoryButton" text="カテゴリー管理" /> 
                 <Button fx:id="resetButton" text="初期化" styleClass="reset-button" />
             </children>
         </HBox>

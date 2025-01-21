@@ -20,13 +20,16 @@ public class MainController {
     private Button resetButton;
 
     @FXML
+    private Button categoryButton; // カテゴリー管理ボタン
+
+    @FXML
     public void initialize() {
-        // 各ボタンに画面遷移のイベントを設定
+        // 各ボタンのアクション設定
         manageButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/manage.fxml"));
         viewDataButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/data.fxml"));
         viewGraphButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/graph.fxml"));
+        categoryButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/category.fxml"));
 
-        // 初期化ボタンに確認ダイアログを追加
         resetButton.setOnAction(event -> showResetConfirmationDialog());
     }
 
@@ -34,7 +37,7 @@ public class MainController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("初期化確認");
         alert.setHeaderText("本当に初期化しますか？");
-        alert.setContentText("すべてのデータが削除されます。この操作は取り消せません。");
+        alert.setContentText("全てのデータが削除されます。この操作は取り消せません。");
 
         alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
 
@@ -46,7 +49,7 @@ public class MainController {
     }
 
     private void resetApplication() {
-        JSONUtility.resetUserData("user_data.json"); // ユーザーデータをリセット
-        SceneSwitcher.switchTo("/com/example/initial.fxml"); // 初期設定画面に戻る
+        JSONUtility.resetUserData("user_data.json");
+        SceneSwitcher.switchTo("/com/example/initial.fxml");
     }
 }

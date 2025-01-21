@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryManager {
-    private List<String> categories;
+    private final List<String> categories;
 
     public CategoryManager() {
         categories = new ArrayList<>();
@@ -27,19 +27,20 @@ public class CategoryManager {
             return false; // 既に存在する場合は追加しない
         }
         categories.add(category);
+        saveCategories();
         return true;
     }
 
     public boolean removeCategory(String category) {
-        return categories.remove(category); // 存在しない場合は false
+        boolean removed = categories.remove(category);
+        if (removed) {
+            saveCategories();
+        }
+        return removed;
     }
 
-    public boolean updateCategory(String oldCategory, String newCategory) {
-        int index = categories.indexOf(oldCategory);
-        if (index != -1) {
-            categories.set(index, newCategory);
-            return true;
-        }
-        return false;
+    private void saveCategories() {
+        // カテゴリーリストを永続化するロジックを実装
+        JSONUtility.saveCategories(categories, "categories.json");
     }
 }

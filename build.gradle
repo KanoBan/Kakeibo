@@ -48,7 +48,6 @@ sourceSets {
     }
 }
 
-
 tasks.withType(JavaExec) {
     jvmArgs += [
         '--module-path', 'C:/pleiades/javafx-sdk-23.0.1/lib',
