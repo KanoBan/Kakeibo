@@ -1,83 +1,45 @@
-:root {
-<<<<<<< HEAD
-    --background-color: #ffffff; /* 背景色 (白) */
-    --text-color: #000000;       /* テキスト色 (黒) */
-}
-
-[data-theme="dark"] {
-    --background-color: #1e1e1e; /* 背景色 (濃い灰色) */
-    --text-color: #f0f0f0;       /* テキスト色 (明るい灰色) */
-}
-
-[data-theme="high-contrast"] {
-    --background-color: #000000; /* 背景色 (黒) */
-    --text-color: #ffff00;       /* テキスト色 (黄色) */
-=======
-    --background-color: #ffffff;
-    --text-color: #000000;
-}
-
-[data-theme="dark"] {
-    --background-color: #1e1e1e;
-    --text-color: #f0f0f0;
-}
-
-[data-theme="high-contrast"] {
-    --background-color: #000000;
-    --text-color: #ffff00;
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
-}
-
 .root {
-    -fx-background-color: var(--background-color);
-    -fx-text-fill: var(--text-color);
-<<<<<<< HEAD
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #000000;
-=======
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
+    -fx-background-color: #f0f8ff; /* 淡い青 */
+    -fx-text-fill: #333333;        /* 文字色: 暗いグレー */
 }
 
 .button {
-    -fx-text-fill: var(--text-color);
-    -fx-font-family: "Arial Narrow";
+    -fx-background-color: #1e90ff; /* 青色 */
+    -fx-text-fill: white;          /* 白文字 */
     -fx-font-weight: bold;
-
-    /* 互換性のための固定値 */
-    -fx-font-family: Arial;
-    -fx-font-weight: normal;
-
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #61a2b1;
+    -fx-background-color: #ffcc00; /* 黄色 */
 }
 
 .button:pressed {
-<<<<<<< HEAD
-    -fx-background-color: #2A5058;
-
-    /* 互換性のための固定値 */
-    -fx-background-color: #2A5058;
+    -fx-background-color: #32cd32; /* 黄緑 */
 }
 
-.text-area {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: var(--text-color);
-    -fx-border-color: var(--background-color);
-    -fx-border-width: 2px;
+.reset-button {
+    -fx-background-color: #ff4c4c; /* 赤色 */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
 
-    /* 互換性のための固定値 */
-    -fx-background-color: #ffffff;
-    -fx-border-color: #000000;
-=======
-    -fx-background-color: #61a2b1;
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
+.reset-button:hover {
+    -fx-background-color: #ff0000; /* 明るい赤 */
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #1e90ff;
+    -fx-border-width: 2px;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #1e90ff;
+    -fx-border-width: 2px;
 }

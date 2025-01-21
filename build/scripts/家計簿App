@@ -210,11 +210,7 @@ DEFAULT_JVM_OPTS=""
 
 set -- \
         -classpath "$CLASSPATH" \
-<<<<<<< HEAD
         com.example.MvcApp \
-=======
-        com.example.MyApp \
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
         "$@"
 
 # Stop when "xargs" is not available.

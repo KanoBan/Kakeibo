@@ -1,27 +1,45 @@
 .root {
-    -fx-background-color: #ffffff; /* 白背景 */
-    -fx-text-fill: #000000;        /* 黒文字 */
+    -fx-background-color: #f0f8ff; /* 淡い青 */
+    -fx-text-fill: #333333;        /* 文字色: 暗いグレー */
 }
 
 .button {
-    -fx-text-fill: #ffffff; /* 白文字 */
-    -fx-font-family: Arial;
+    -fx-background-color: #1e90ff; /* 青色 */
+    -fx-text-fill: white;          /* 白文字 */
     -fx-font-weight: bold;
-    -fx-background-color: #1e90ff; /* 青背景 */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
 .button:hover {
-    -fx-background-color: #ffcc00; /* 黄色背景 */
+    -fx-background-color: #ffcc00; /* 黄色 */
 }
 
 .button:pressed {
-    -fx-background-color: #32cd32; /* 黄緑背景 */
+    -fx-background-color: #32cd32; /* 黄緑 */
 }
 
-.text-area {
-    -fx-background-color: #ffffff; /* 白背景 */
-    -fx-text-fill: #000000;        /* 黒文字 */
-    -fx-border-color: #1e90ff;    /* 青色枠 */
+.reset-button {
+    -fx-background-color: #ff4c4c; /* 赤色 */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.reset-button:hover {
+    -fx-background-color: #ff0000; /* 明るい赤 */
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #1e90ff;
+    -fx-border-width: 2px;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #1e90ff;
     -fx-border-width: 2px;
 }

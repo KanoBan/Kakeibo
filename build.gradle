@@ -16,23 +16,22 @@ repositories {
     mavenCentral()
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-javafx {
-    version = "21"
-<<<<<<< HEAD
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ] // javafx.graphics を追加
-=======
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
+dependencies {
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
 }
 
 application {
     mainClass = 'com.example.MvcApp' // エントリーポイントクラス
 }
 
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+}
 
 jlink {
     options = ['--strip-debug', '--no-header-files', '--no-man-pages']
@@ -49,21 +48,10 @@ sourceSets {
     }
 }
 
-dependencies {
-    implementation 'org.openjfx:javafx-controls:21'
-    implementation 'org.openjfx:javafx-fxml:21'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
-}
 
 tasks.withType(JavaExec) {
     jvmArgs += [
         '--module-path', 'C:/pleiades/javafx-sdk-23.0.1/lib',
-<<<<<<< HEAD
-        '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics' // javafx.graphics を追加
-=======
-        '--add-modules', 'javafx.controls,javafx.fxml'
->>>>>>> 14bab891c1200f6ddf9532abdf7926dcb80185f0
+        '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics'
     ]
 }

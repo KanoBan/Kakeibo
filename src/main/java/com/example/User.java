@@ -1,31 +1,45 @@
 package com.example;
 
-import java.util.Scanner;
+import java.util.List;
 
 public class User {
-    private String userName;
-    private double monthlyIncome;
-    private double savings;
+    private double balance;        // 所持金
+    private int payday;            // 給料日
+    private List<String> categories; // カテゴリーリスト
 
-    public void setupUserProfile(Scanner scanner) {
-        System.out.print("Enter your name: ");
-        userName = scanner.nextLine();
-        System.out.print("Enter your monthly income: ");
-        monthlyIncome = scanner.nextDouble();
-        System.out.print("Enter your starting savings: ");
-        savings = scanner.nextDouble();
-        scanner.nextLine(); // consume newline
+    // デフォルトコンストラクター（必須）
+    public User() {
     }
 
-    public String getUserName() {
-        return userName;
+    // 引数付きコンストラクター
+    public User(double balance, int payday, List<String> categories) {
+        this.balance = balance;
+        this.payday = payday;
+        this.categories = categories;
     }
 
-    public double getMonthlyIncome() {
-        return monthlyIncome;
+    // ゲッターとセッター
+    public double getBalance() {
+        return balance;
     }
 
-    public double getSavings() {
-        return savings;
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getPayday() {
+        return payday;
+    }
+
+    public void setPayday(int payday) {
+        this.payday = payday;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 }
