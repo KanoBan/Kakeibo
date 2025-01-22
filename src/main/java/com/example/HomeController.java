@@ -1,8 +1,11 @@
 package com.example;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -10,7 +13,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 public class HomeController {
 
@@ -18,19 +20,19 @@ public class HomeController {
     private Label balanceLabel;
 
     @FXML
-    private TableView<Expense> summaryTable;
+    private TableView<Transaction> summaryTable;
 
     @FXML
-    private TableColumn<Expense, String> dateColumn;
+    private TableColumn<Transaction, String> dateColumn;
 
     @FXML
-    private TableColumn<Expense, String> categoryColumn;
+    private TableColumn<Transaction, String> categoryColumn;
 
     @FXML
-    private TableColumn<Expense, Double> amountColumn;
+    private TableColumn<Transaction, Double> amountColumn;
 
     @FXML
-    private TableColumn<Expense, String> descriptionColumn;
+    private TableColumn<Transaction, String> descriptionColumn;
 
     @FXML
     private Button manageButton;
@@ -47,41 +49,40 @@ public class HomeController {
     @FXML
     private Button resetButton;
 
-    private double balance = 1000000; // 初期残高
-    private final List<Expense> expenses = new ArrayList<>();
+    private double balance;
 
     @FXML
     public void initialize() {
-        // 残高を更新
+        // ユーザーデータをロード
+        User user = JSONUtility.loadUserData("user_data.json");
+        if (user != null) {
+            balance = user.getBalance();
+        } else {
+            balance = 0.0;
+        }
         updateBalanceLabel();
 
-        // テーブルのカラムにプロパティをバインド
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
-        amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        // トランザクションデータをロード
+        ObservableList<Transaction> transactions = FXCollections.observableArrayList(JSONUtility.loadTransactions("transactions.json"));
 
-        // サンプルデータを読み込み
-        loadSampleData();
+        // テーブル設定
+        dateColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDate()));
+        categoryColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getCategory()));
+        amountColumn.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getAmount()).asObject());
+        descriptionColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDescription()));
 
-        // 各ボタンの画面遷移設定
+        summaryTable.setItems(transactions);
+
+        // ボタン設定
         manageButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/manage.fxml"));
         viewDataButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/data.fxml"));
         viewGraphButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/graph.fxml"));
         categoryButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/category.fxml"));
-
-        // 初期化ボタンの確認
         resetButton.setOnAction(event -> showResetConfirmationDialog());
     }
 
     private void updateBalanceLabel() {
         balanceLabel.setText(String.format("残高: ¥%,.2f", balance));
-    }
-
-    private void loadSampleData() {
-        expenses.add(new Expense("2025-01-20", "食費", 2000, "スーパーで買い物"));
-        expenses.add(new Expense("2025-01-19", "交通費", 1000, "電車代"));
-        summaryTable.getItems().setAll(expenses);
     }
 
     private void showResetConfirmationDialog() {
@@ -98,7 +99,8 @@ public class HomeController {
     }
 
     private void resetApplication() {
-        JSONUtility.resetUserData("user_data.json");
+        JSONUtility.saveUserData(new User(0.0, 1, new ArrayList<>()), "user_data.json");
+        JSONUtility.saveTransactions(new ArrayList<>(), "transactions.json");
         SceneSwitcher.switchTo("/com/example/initial.fxml");
     }
 }

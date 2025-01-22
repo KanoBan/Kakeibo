@@ -6,6 +6,10 @@ public class Transaction {
     private double amount;
     private String description;
 
+    // デフォルトコンストラクタ（必要）
+    public Transaction() {}
+
+    // パラメータ付きコンストラクタ
     public Transaction(String date, String category, double amount, String description) {
         this.date = date;
         this.category = category;

@@ -17,6 +17,7 @@
                 <TextField fx:id="descriptionField" promptText="詳細を入力してください" prefWidth="500.0" />
                 <HBox spacing="10.0" style="-fx-margin-top: 10;">
                     <Button fx:id="addExpenseButton" text="支出を追加" />
+                    <TextField fx:id="incomeAmountField" promptText="臨時収入金額" prefWidth="200.0" />
                     <Button fx:id="addIncomeButton" text="臨時収入を追加" />
                 </HBox>
                 <TableView fx:id="transactionTable" prefWidth="900.0" prefHeight="350.0">

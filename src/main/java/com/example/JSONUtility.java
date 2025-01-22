@@ -36,6 +36,31 @@ public class JSONUtility {
         return null;
     }
 
+    // トランザクションリストを保存
+    public static void saveTransactions(List<Transaction> transactions, String filePath) {
+        try {
+            objectMapper.writeValue(new File(filePath), transactions);
+            System.out.println("Transactions saved successfully to " + filePath);
+        } catch (IOException e) {
+            System.err.println("Failed to save transactions: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    // トランザクションリストを読み込み
+    public static List<Transaction> loadTransactions(String filePath) {
+        try {
+            File file = new File(filePath);
+            if (file.exists()) {
+                return objectMapper.readValue(file, new TypeReference<List<Transaction>>() {});
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to load transactions: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+
     // ユーザーデータをリセット
     public static void resetUserData(String filePath) {
         File file = new File(filePath);
@@ -49,14 +74,13 @@ public class JSONUtility {
     // 初期設定が完了しているか確認
     public static boolean isInitialSetupDone(String filePath) {
         File file = new File(filePath);
-        return file.exists(); // ファイルが存在するかどうかを確認
+        return file.exists();
     }
 
     // カテゴリーリストを保存
     public static void saveCategories(List<String> categories, String filePath) {
         try {
-            File file = new File(filePath);
-            objectMapper.writeValue(file, categories);
+            objectMapper.writeValue(new File(filePath), categories);
             System.out.println("Categories saved successfully to " + filePath);
         } catch (IOException e) {
             System.err.println("Failed to save categories: " + e.getMessage());
@@ -75,6 +99,6 @@ public class JSONUtility {
             System.err.println("Failed to load categories: " + e.getMessage());
             e.printStackTrace();
         }
-        return new ArrayList<>(); // ファイルが存在しない場合は空のリストを返す
+        return new ArrayList<>();
     }
 }

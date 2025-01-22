@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
@@ -20,33 +17,35 @@ public class GraphController {
     @FXML
     private Button backButton;
 
-    private final List<Expense> expenses = new ArrayList<>();
-
     @FXML
     public void initialize() {
-        loadPieChart();
-        loadLineChart();
+        // トランザクションのロード
+        var transactions = JSONUtility.loadTransactions("transactions.json");
+
+        // グラフをロード
+        loadPieChart(transactions);
+        loadLineChart(transactions);
 
         backButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/main.fxml"));
     }
 
-    private void loadPieChart() {
+    private void loadPieChart(Iterable<Transaction> transactions) {
         pieChart.getData().clear();
-        for (Expense expense : expenses) {
-            if (!"臨時収入".equals(expense.getCategory())) {
-                pieChart.getData().add(new PieChart.Data(expense.getCategory(), expense.getAmount()));
+        for (Transaction transaction : transactions) {
+            if (transaction.getAmount() < 0) { // 支出のみ
+                pieChart.getData().add(new PieChart.Data(transaction.getCategory(), -transaction.getAmount()));
             }
         }
     }
 
-    private void loadLineChart() {
+    private void loadLineChart(Iterable<Transaction> transactions) {
         lineChart.getData().clear();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("日ごとの支出");
 
-        for (Expense expense : expenses) {
-            if (!"臨時収入".equals(expense.getCategory())) {
-                series.getData().add(new XYChart.Data<>(expense.getDate(), expense.getAmount()));
+        for (Transaction transaction : transactions) {
+            if (transaction.getAmount() < 0) { // 支出のみ
+                series.getData().add(new XYChart.Data<>(transaction.getDate(), -transaction.getAmount()));
             }
         }
 
