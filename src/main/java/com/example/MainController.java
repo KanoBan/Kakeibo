@@ -20,11 +20,10 @@ public class MainController {
     private Button resetButton;
 
     @FXML
-    private Button categoryButton; // カテゴリー管理ボタン
+    private Button categoryButton;
 
     @FXML
     public void initialize() {
-        // 各ボタンのアクション設定
         manageButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/manage.fxml"));
         viewDataButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/data.fxml"));
         viewGraphButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/graph.fxml"));

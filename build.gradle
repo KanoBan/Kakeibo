@@ -25,12 +25,12 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.example.MvcApp' // エントリーポイントクラス
+    mainClass = 'com.example.MvcApp'
 }
 
 javafx {
     version = "21"
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base' ] // javafx.base を追加
 }
 
 jlink {
@@ -51,6 +51,6 @@ sourceSets {
 tasks.withType(JavaExec) {
     jvmArgs += [
         '--module-path', 'C:/pleiades/javafx-sdk-23.0.1/lib',
-        '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics'
+        '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics,javafx.base' 
     ]
 }

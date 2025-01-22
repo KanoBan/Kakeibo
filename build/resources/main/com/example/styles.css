@@ -1,45 +1,100 @@
+/* 全体のデフォルトスタイル */
 .root {
-    -fx-background-color: #f0f8ff; /* 淡い青 */
-    -fx-text-fill: #333333;        /* 文字色: 暗いグレー */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: #F0F8FF; /* 淡い水色 */
 }
 
-.button {
-    -fx-background-color: #1e90ff; /* 青色 */
-    -fx-text-fill: white;          /* 白文字 */
+/* ヘッダーラベルのスタイル */
+.header-label {
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
+    -fx-text-fill: #000000; /* 黒色で強調 */
+    -fx-padding: 10px;
 }
 
-.button:hover {
-    -fx-background-color: #ffcc00; /* 黄色 */
+/* ボタンのスタイル */
+.menu-button {
+    -fx-padding: 10px 20px;
+    -fx-background-color: #ADD8E6; /* パステル水色 */
+    -fx-text-fill: #000000; /* 黒色文字 */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #4682B4; /* ダーク水色のボーダー */
 }
 
-.button:pressed {
-    -fx-background-color: #32cd32; /* 黄緑 */
+.menu-button:hover {
+    -fx-background-color: #87CEFA; /* ホバー時の明るい水色 */
+    -fx-border-color: #4682B4;
 }
 
+/* 初期化ボタン（注意カラー：赤） */
 .reset-button {
-    -fx-background-color: #ff4c4c; /* 赤色 */
+    -fx-padding: 10px 20px;
+    -fx-background-color: #FF6F61; /* 落ち着いた赤色 */
     -fx-text-fill: white;
-    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 .reset-button:hover {
-    -fx-background-color: #ff0000; /* 明るい赤 */
+    -fx-background-color: #FF4500; /* 鮮やかな赤色 */
 }
 
-.label {
-    -fx-font-size: 14px;
+/* テーブルのスタイル */
+.table-view {
+    -fx-border-color: #87CEEB; /* 明るい水色ボーダー */
+    -fx-border-radius: 5px;
+    -fx-background-color: white; /* 白背景 */
+    -fx-table-cell-border-color: #D3D3D3; /* ライトグレーのセル区切り */
+    -fx-padding: 10px;
+}
+
+/* テーブル列のヘッダー */
+.table-view .column-header {
+    -fx-background-color: #ADD8E6; /* パステル水色 */
     -fx-font-weight: bold;
+    -fx-text-fill: #000000; /* 黒文字 */
 }
 
+/* 入力フィールド（テキストフィールド）のスタイル */
 .text-field {
-    -fx-background-color: white;
-    -fx-border-color: #1e90ff;
-    -fx-border-width: 2px;
+    -fx-background-color: #FFFFFF; /* 白色背景 */
+    -fx-border-color: #87CEEB; /* 水色ボーダー */
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
 }
 
+.text-field:focused {
+    -fx-border-color: #32CD32; /* フォーカス時の黄緑色ボーダー */
+}
+
+/* コンボボックスのスタイル */
 .combo-box {
-    -fx-background-color: white;
-    -fx-border-color: #1e90ff;
-    -fx-border-width: 2px;
+    -fx-background-color: #FFFFFF; /* 白色背景 */
+    -fx-border-color: #87CEEB; /* 水色ボーダー */
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.combo-box:hover {
+    -fx-border-color: #FFD700; /* ホバー時の黄色ボーダー */
+}
+
+/* ボタン共通スタイル */
+.button {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* 戻るボタン */
+.back-button {
+    -fx-background-color: #98FB98; /* パステル黄緑 */
+    -fx-text-fill: #000000; /* 黒文字 */
+}
+
+.back-button:hover {
+    -fx-background-color: #32CD32; /* 鮮やかな黄緑 */
 }

@@ -1,7 +1,9 @@
 module mvcapp {
-    requires transitive javafx.graphics; // 必須
-    requires javafx.controls;            // HBox を使用するため
+    requires transitive javafx.graphics;
+    requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.base; 
+
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
 

@@ -9,7 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 
 public class InitialController {
 
@@ -38,28 +37,16 @@ public class InitialController {
 
     @FXML
     public void initialize() {
-        // デフォルトカテゴリーを追加
         categories.add("食費");
         categories.add("交通費");
         categories.add("娯楽");
         categories.add("その他");
         categoryListView.getItems().addAll(categories);
 
-        // 次へボタンの無効化を条件バインディング
         nextButton.disableProperty().bind(Bindings.isEmpty(balanceField.textProperty()));
 
-        // カテゴリーを追加するボタン
         addCategoryButton.setOnAction(event -> addCategory());
-        categoryInputField.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                addCategory();
-            }
-        });
-
-        // カテゴリーを削除するボタン
         removeCategoryButton.setOnAction(event -> removeCategory());
-
-        // 次へボタンでホーム画面へ遷移
         nextButton.setOnAction(event -> saveAndProceed());
     }
 
@@ -69,6 +56,8 @@ public class InitialController {
             categories.add(category);
             categoryListView.getItems().add(category);
             categoryInputField.clear();
+        } else {
+            showAlert("エラー", "カテゴリーを正しく入力してください。");
         }
     }
 
@@ -77,6 +66,8 @@ public class InitialController {
         if (selectedCategory != null) {
             categories.remove(selectedCategory);
             categoryListView.getItems().remove(selectedCategory);
+        } else {
+            showAlert("エラー", "削除するカテゴリーを選択してください。");
         }
     }
 
@@ -89,16 +80,12 @@ public class InitialController {
                 throw new NumberFormatException("Invalid payday");
             }
 
-            // データを JSON に保存
             User user = new User(balance, payday, categories);
             JSONUtility.saveUserData(user, "user_data.json");
 
-            // メイン画面に遷移
             SceneSwitcher.switchTo("/com/example/main.fxml");
         } catch (NumberFormatException e) {
-            showAlert("エラー", "所持金や給料日は正しい数値で入力してください。");
-        } catch (Exception e) {
-            e.printStackTrace();
+            showAlert("エラー", "所持金や給料日は正しい形式で入力してください。");
         }
     }
 

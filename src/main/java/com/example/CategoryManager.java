@@ -4,43 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryManager {
-    private final List<String> categories;
+    private User user;
 
     public CategoryManager() {
-        categories = new ArrayList<>();
-        initializeDefaultCategories();
-    }
-
-    private void initializeDefaultCategories() {
-        categories.add("食費");
-        categories.add("交通費");
-        categories.add("娯楽");
-        categories.add("その他");
+        user = JSONUtility.loadUserData("user_data.json");
+        if (user == null) {
+            user = new User(0.0, 1, new ArrayList<>());
+        }
     }
 
     public List<String> getCategories() {
-        return new ArrayList<>(categories);
+        return user.getCategories();
     }
 
-    public boolean addCategory(String category) {
-        if (categories.contains(category)) {
-            return false; // 既に存在する場合は追加しない
-        }
-        categories.add(category);
-        saveCategories();
-        return true;
-    }
-
-    public boolean removeCategory(String category) {
-        boolean removed = categories.remove(category);
-        if (removed) {
+    public void addCategory(String category) {
+        if (!user.getCategories().contains(category)) {
+            user.getCategories().add(category);
             saveCategories();
         }
-        return removed;
+    }
+
+    public void removeCategory(String category) {
+        user.getCategories().remove(category);
+        saveCategories();
     }
 
     private void saveCategories() {
-        // カテゴリーリストを永続化するロジックを実装
-        JSONUtility.saveCategories(categories, "categories.json");
+        JSONUtility.saveUserData(user, "user_data.json");
     }
 }

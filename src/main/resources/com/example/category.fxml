@@ -7,18 +7,20 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CategoryController">
     <children>
-        <VBox layoutX="20.0" layoutY="20.0" spacing="15.0">
+        <VBox layoutX="20.0" layoutY="20.0" spacing="20.0" prefWidth="800.0" prefHeight="600.0" style="-fx-padding: 20;">
             <children>
-                <Label text="カテゴリー管理" styleClass="header-label" />
-                <ListView fx:id="categoryListView" prefHeight="200.0" prefWidth="300.0" />
-                <HBox spacing="10.0">
-                    <children>
-                        <TextField fx:id="categoryField" promptText="カテゴリー名を入力" />
-                        <Button fx:id="addCategoryButton" text="追加" />
-                        <Button fx:id="removeCategoryButton" text="削除" />
-                    </children>
+                <Label text="カテゴリー管理" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <TableView fx:id="categoryTable" prefHeight="350.0" prefWidth="700.0">
+                    <columns>
+                        <TableColumn fx:id="categoryColumn" text="カテゴリー" prefWidth="600.0" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="categoryInput" promptText="カテゴリー名を入力" prefWidth="500.0" />
+                <HBox spacing="10.0" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="addButton" text="追加" />
+                    <Button fx:id="removeButton" text="削除" />
                 </HBox>
-                <Button fx:id="backButton" text="戻る" />
+                <Button fx:id="backButton" text="戻る" style="-fx-margin-top: 20px;" />
             </children>
         </VBox>
     </children>

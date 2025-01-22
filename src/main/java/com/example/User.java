@@ -3,22 +3,18 @@ package com.example;
 import java.util.List;
 
 public class User {
-    private double balance;        // 所持金
-    private int payday;            // 給料日
-    private List<String> categories; // カテゴリーリスト
+    private double balance;
+    private int payday;
+    private List<String> categories;
 
-    // デフォルトコンストラクター（必須）
-    public User() {
-    }
+    public User() {}
 
-    // 引数付きコンストラクター
     public User(double balance, int payday, List<String> categories) {
         this.balance = balance;
         this.payday = payday;
         this.categories = categories;
     }
 
-    // ゲッターとセッター
     public double getBalance() {
         return balance;
     }

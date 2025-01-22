@@ -2,13 +2,33 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ManageController">
     <children>
-        <Label fx:id="balanceLabel" layoutX="20.0" layoutY="20.0" text="残高: ¥0" />
-        <TextField fx:id="amountField" layoutX="20.0" layoutY="60.0" prefWidth="200.0" promptText="金額を入力してください" />
-        <ComboBox fx:id="categoryComboBox" layoutX="240.0" layoutY="60.0" prefWidth="200.0" promptText="カテゴリーを選択してください" />
-        <Button fx:id="addButton" layoutX="460.0" layoutY="60.0" text="追加" />
-        <Button fx:id="backButton" layoutX="20.0" layoutY="100.0" text="戻る" />
+        <VBox spacing="20.0" layoutX="20.0" layoutY="20.0" prefWidth="960.0" prefHeight="600.0" style="-fx-padding: 20;">
+            <children>
+                <Label fx:id="balanceLabel" text="残高: ¥0" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <HBox spacing="10.0">
+                    <TextField fx:id="amountField" promptText="金額を入力してください" prefWidth="200.0" />
+                    <ComboBox fx:id="categoryComboBox" promptText="カテゴリーを選択してください" prefWidth="250.0" />
+                </HBox>
+                <TextField fx:id="descriptionField" promptText="詳細を入力してください" prefWidth="500.0" />
+                <HBox spacing="10.0" style="-fx-margin-top: 10;">
+                    <Button fx:id="addExpenseButton" text="支出を追加" />
+                    <Button fx:id="addIncomeButton" text="臨時収入を追加" />
+                </HBox>
+                <TableView fx:id="transactionTable" prefWidth="900.0" prefHeight="350.0">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" text="日付" prefWidth="200.0" />
+                        <TableColumn fx:id="categoryColumn" text="カテゴリー" prefWidth="250.0" />
+                        <TableColumn fx:id="amountColumn" text="金額" prefWidth="200.0" />
+                        <TableColumn fx:id="descriptionColumn" text="詳細" prefWidth="250.0" />
+                    </columns>
+                </TableView>
+                <Button fx:id="backButton" text="戻る" prefWidth="100.0" style="-fx-margin-top: 20;" />
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

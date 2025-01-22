@@ -27,7 +27,6 @@ public class GraphController {
         loadPieChart();
         loadLineChart();
 
-        // 戻るボタンの動作
         backButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/main.fxml"));
     }
 
@@ -45,20 +44,12 @@ public class GraphController {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("日ごとの支出");
 
-        for (int i = 0; i < expenses.size(); i++) {
-            Expense expense = expenses.get(i);
+        for (Expense expense : expenses) {
             if (!"臨時収入".equals(expense.getCategory())) {
                 series.getData().add(new XYChart.Data<>(expense.getDate(), expense.getAmount()));
             }
         }
 
         lineChart.getData().add(series);
-    }
-
-    public void setExpenses(List<Expense> expenses) {
-        this.expenses.clear();
-        this.expenses.addAll(expenses);
-        loadPieChart();
-        loadLineChart();
     }
 }

@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController" prefWidth="600" prefHeight="400">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController" prefWidth="800" prefHeight="500">
     <children>
-        <!-- ナビゲーションボタン -->
-        <HBox layoutX="50.0" layoutY="150.0" spacing="20">
-            <children>
-                <Button fx:id="manageButton" text="収支管理" />
-                <Button fx:id="viewDataButton" text="データ確認" />
-                <Button fx:id="viewGraphButton" text="グラフ表示" />
-                <Button fx:id="categoryButton" text="カテゴリー管理" /> 
+        <VBox layoutX="50.0" layoutY="50.0" spacing="20.0">
+            <HBox spacing="30.0">
+                <Button fx:id="manageButton" text="収支管理" styleClass="menu-button" />
+                <Button fx:id="viewDataButton" text="データ確認" styleClass="menu-button" />
+                <Button fx:id="viewGraphButton" text="グラフ表示" styleClass="menu-button" />
+                <Button fx:id="categoryButton" text="カテゴリー管理" styleClass="menu-button" />
                 <Button fx:id="resetButton" text="初期化" styleClass="reset-button" />
-            </children>
-        </HBox>
+            </HBox>
+            <Label text="説明" style="-fx-font-size: 14px;" />
+            <VBox spacing="10.0" layoutX="20.0">
+                <Label text="収支管理: 各収支の入力や臨時収入の登録を行います。" />
+                <Label text="データ確認: 入力した収支データを確認します。" />
+                <Label text="グラフ表示: 支出の分布や変動をグラフで可視化します。" />
+                <Label text="カテゴリー管理: カテゴリーの追加や削除を行います。" />
+                <Label text="初期化: すべてのデータをリセットします。" style="-fx-text-fill: red;" />
+            </VBox>
+        </VBox>
     </children>
 </AnchorPane>
