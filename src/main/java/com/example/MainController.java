@@ -1,7 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -50,8 +48,7 @@ public class MainController {
     }
 
     private void resetApplication() {
-        JSONUtility.saveUserData(new User(0.0, 1, new ArrayList<>()), "user_data.json");
-        JSONUtility.saveTransactions(new ArrayList<>(), "transactions.json");
+        JSONUtility.resetAllData("user_data.json", "categories.json");
         SceneSwitcher.switchTo("/com/example/initial.fxml");
     }
 }

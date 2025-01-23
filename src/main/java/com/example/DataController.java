@@ -38,7 +38,7 @@ public class DataController {
     public void initialize() {
         // JSONからトランザクションとカテゴリーをロード
         transactions = FXCollections.observableArrayList(JSONUtility.loadTransactions("transactions.json"));
-        categories = FXCollections.observableArrayList(JSONUtility.loadCategories("categories.json"));
+        reloadCategories();
 
         // テーブルの列にプロパティをバインド
         dateColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDate()));
@@ -76,6 +76,12 @@ public class DataController {
         dataTable.setItems(transactions);
 
         backButton.setOnAction(event -> SceneSwitcher.switchTo("/com/example/main.fxml"));
+    }
+
+    // カテゴリーリストを再読み込み
+    private void reloadCategories() {
+        categories = FXCollections.observableArrayList(JSONUtility.loadCategories("categories.json"));
+        categoryColumn.setCellFactory(ComboBoxTableCell.forTableColumn(categories));
     }
 
     // トランザクション変更を保存
